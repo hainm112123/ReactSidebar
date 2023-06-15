@@ -1,8 +1,6 @@
 import React from 'react'
 
-const Props = {};
-
-const DefaultPage = (props = Props) => {
+const DefaultPage = () => {
   return (
     <div>DefaultPage</div>
   );

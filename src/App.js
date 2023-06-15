@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import MainLayout from './components/layout/MainLayout'
-import HomePage from './pages/home/HomePage'
+import routes from './routes/index'
 
 function App() {
   return (
     <BrowserRouter className="App">
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomePage/>}></Route>
+          {routes}
         </Route>
       </Routes>
     </BrowserRouter>

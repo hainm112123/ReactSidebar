@@ -1,10 +1,11 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
-const Props = {};
-
-const DashboardPageLayout = (props = Props) => {
+const DashboardPageLayout = () => {
   return (
-    <div>DashboardPageLayout</div>
+    <div>
+      <Outlet></Outlet>
+    </div>
   );
 };
 
