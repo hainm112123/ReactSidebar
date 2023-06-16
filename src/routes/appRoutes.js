@@ -12,6 +12,11 @@ import ComponentPageLayout from '../pages/components/ComponentPageLayout';
 import ChangelogPage from '../pages/changelog/ChangelogPage';
 import InstallationPage from '../pages/installation/InstallationPage';
 import DocumentationPage from '../pages/documentation/DocumentationPage';
+import AnalyticsPage from '../pages/dashboard/AnalyticsPage'
+import SaasPage from '../pages/dashboard/SaasPage';
+import AlertPage from '../pages/components/AlertPage';
+import ButtonPage from '../pages/components/ButtonPage';
+import ComponentIndex from '../pages/components/ComponentIndex'
 
 const appRoutes = [
   {
@@ -36,7 +41,7 @@ const appRoutes = [
       displayText: "Dashboard",
       icon: <DashboardOutlinedIcon />
     },
-    child: [
+    childs: [
       {
         index: true,
         element: <DashboardIndex />,
@@ -49,7 +54,23 @@ const appRoutes = [
         sidebarProps: {
           displayText: "Default",
         }
-      }
+      },
+      {
+        path: "/dashboard/analytics",
+        element: <AnalyticsPage />,
+        state: "dashboard.analytics",
+        sidebarProps: {
+          displayText: "Analytics",
+        }
+      },
+      {
+        path: "/dashboard/saasPage",
+        element: <SaasPage />,
+        state: "dashboard.saasPage",
+        sidebarProps: {
+          displayText: "SaasPage",
+        }
+      },
     ],
   },
   {
@@ -59,7 +80,30 @@ const appRoutes = [
     sidebarProps: {
       displayText: "Components",
       icon: <AppsOutlinedIcon />
-    }
+    },
+    childs: [
+      {
+        index: true,
+        element: <ComponentIndex />,
+        state: "components.index",
+      },
+      {
+        path: "/components/alertPage",
+        element: <AlertPage />,
+        state: "components.alertPage",
+        sidebarProps: {
+          displayText: "AlertPage",
+        }
+      },
+      {
+        path: "/components/buttonPage",
+        element: <ButtonPage />,
+        state: "components.buttonPage",
+        sidebarProps: {
+          displayText: "ButtonPage",
+        }
+      },
+    ],
   },
   {
     path: "/documentation",

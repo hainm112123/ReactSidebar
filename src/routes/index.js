@@ -31,7 +31,7 @@ const generateRoute = (routes) => {
           }
           key={index}
         >
-          {route.child && (generateRoute(route.child))}
+          {route.childs && (generateRoute(route.childs))}
         </Route>
       )
     )

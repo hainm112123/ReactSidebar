@@ -2,10 +2,10 @@ import React from 'react'
 
 const Props = {};
 
-const SassPage = (props = Props) => {
+const SaasPage = (props = Props) => {
   return (
-    <div>SassPage</div>
+    <div>SaasPage</div>
   );
 };
 
-export default SassPage;
+export default SaasPage;
