@@ -25,7 +25,7 @@ const generateRoute = (routes) => {
           exact
           path={route.path}
           element={
-            <PageWrapper state={route.state ?? undefined}>
+            <PageWrapper state={route.childs ? undefined : route.state}>
               {route.element}
             </PageWrapper>
           }

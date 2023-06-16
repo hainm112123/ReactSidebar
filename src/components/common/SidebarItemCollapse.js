@@ -1,13 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { List, Collapse, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 
 import colorConfigs from '../../configs/colorConfigs'
 import SidebarItem from './SidebarItem';
+import { useSelector } from 'react-redux';
 
 const SidebarItemCollapse = ({ item }) => {
   const [open, setOpen] = useState(false);
+
+  const { appState } = useSelector((state) => state.appState)
+
+  useEffect(() => {
+    if (appState && appState.includes(item.state)) {
+      setOpen(true);
+    }
+  }, [appState, item])
 
   return (
     item.sidebarProps ? (
